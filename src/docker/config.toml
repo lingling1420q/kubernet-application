@@ -1,0 +1,26 @@
+concurrent = 1
+check_interval = 0
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "dev-101"
+  url = "https://gitlab.innotechx.com/"
+  token = "ju1S6s7WNX2dymyx5Fxv"
+  executor = "docker"
+  output_limit = 40960
+  [runners.custom_build_dir]
+  [runners.docker]
+    tls_verify = false
+    image = "apline:latest"
+    privileged = false
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/cache"]
+    shm_size = 0
+    helper_image = "docker-registry.shmiao.net/gitlab-ci/gitlab-runner-helper:x86_64-a987417a"
+  [runners.cache]
+    [runners.cache.s3]
+    [runners.cache.gcs]

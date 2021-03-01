@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitlab-runner-cache-oss
+  namespace: gitlab-ci
+spec:
+  capacity:
+    storage: 128Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: oss
+  flexVolume:
+    driver: "alicloud/oss"
+    options:
+      bucket: "gitlab-ci-runner-cache"
+      url: "oss-cn-beijing.aliyuncs.com"
+      akId: "12345keke"
+      akSecret: "1223keke"
+      otherOpts: "-o max_stat_cache_size=0 -o allow_other"
