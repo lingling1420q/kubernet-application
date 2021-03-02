@@ -269,7 +269,6 @@ EOF
 
 #### Kubernetes Deployment 故障排查常见方法
 
-
 <p align="center">
 <img width="800" align="center" src="src/images/1.jpg" />
 </p>
@@ -285,7 +284,6 @@ EOF
 </p>
 
 ```markdown
-
 在 Kubernetes 中，你的应用程序通过两层负载均衡器暴露服务：内部的和外部的。
 ```
 
@@ -346,11 +344,9 @@ spec:
 
 在进行调试之前，让我们回顾一下这三个组件是如何相互关联的。让我们先从 Deployment 和 Service 开始。
 
-
 #### 连接 Deployment 和 Service
 
 值得注意的是，Service 和 Deployment 之间其实根本没有连接。事实是：Service 直接指向 Pod，并完全跳过了Deployment。
-
 
 所以，你应该注意的是 Pod 和 Service 之间的相互关系。你应该记住三件事：
 
