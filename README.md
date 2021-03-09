@@ -200,7 +200,6 @@ kube-system   monitoring-influxdb    ClusterIP   10.97.131.84     <none>        
 > kubectl patch deployment valid-deployment  --type json   -p='[{"op": "remove", "path": "/spec/template/spec/containers/0/livenessProbe"}]'
 ```
 
-
 21. Scale 资源
 ```bash
 > kubectl scale --replicas=3 rs/foo                                 # Scale a replicaset named 'foo' to 3
