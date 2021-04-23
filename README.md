@@ -59,7 +59,7 @@ kube-system   kubelet                ClusterIP   None             <none>        
 kube-system   kubernetes-dashboard   NodePort    10.102.72.242    192.168.132.190,192.168.132.193,192.132.132.194   443:32631/TCP            105d
 kube-system   metrics-server         ClusterIP   10.98.249.8      <none>                                            443/TCP                  106d
 kube-system   monitoring-grafana     ClusterIP   10.102.205.153   <none>                                            80/TCP                   29h
-kube-system   monitoring-influxdb    ClusterIP   10.97.131.84     <none>                                            8086/TCP                 29h                       
+kube-system   monitoring-influxdb    ClusterIP   10.97.131.84     <none>                                            8086/TCP                 29h                 
 ```
 
 7. 使用详细输出来描述pods heapster
@@ -426,6 +426,12 @@ spec:
 * 80 是 service 通过 port 字段暴露的端口.
 
 如果可以连接，则说明设置正确。如果不行，则很可能是你填写了错误的标签或端口不匹配。
+
+你也可以进去这个pod查看这个pod运行详情:
+```bash
+> kubectl exec -it 84ffb547cf-j6k2p bash -n kube-systerm
+> netstat -ltn #只列出所有监听 tcp 端口
+```
 
 #### 连接 Service 和 Ingress
 
