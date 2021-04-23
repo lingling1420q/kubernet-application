@@ -430,7 +430,7 @@ spec:
 你也可以进去这个pod查看这个pod运行详情:
 ```bash
 > kubectl exec -it 84ffb547cf-j6k2p bash -n kube-systerm
-> netstat -ltn 
+> netstat -ltn #只列出所有监听 tcp 端口
 ```
 
 #### 连接 Service 和 Ingress
